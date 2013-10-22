@@ -1,0 +1,25 @@
+import junit.framework.Assert;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class TestConversionRomanos {
+
+	Main conversorRomano;
+	String numeroConvertido;
+	
+	@Before
+	public void init(){
+		conversorRomano = new Main();
+		numeroConvertido = "";
+	}
+	
+	
+	@Test
+	public void testNumeroUno() {
+		numeroConvertido = conversorRomano.convertirNumero(1);
+		Assert.assertEquals("I", numeroConvertido);
+	}
+
+}
