@@ -191,14 +191,8 @@ public class TestConversionRomanos {
 	}
 	
 	@Test
-	public void testNumeroCincuentaSeis() {
+	public void testNumerocincuentaseis() {
 		numeroConvertido = conversorRomano.convertirNumero(56);
 		Assert.assertEquals("LVI", numeroConvertido);
-	}
-	
-	@Test
-	public void testNumeroSetescientoOchentaDos() {
-		numeroConvertido = conversorRomano.convertirNumero(782);
-		Assert.assertEquals("DCCLXXXII", numeroConvertido);
 	}
 }

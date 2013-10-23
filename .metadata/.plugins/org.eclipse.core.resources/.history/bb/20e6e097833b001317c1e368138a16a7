@@ -1,11 +1,39 @@
 public class Main {
 	
+	private String simbolosUnoNueve[] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+	private String simbolosDiezNoventa[] = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+	private String simboloCienNovescientos[] = {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+	private String simboloMil = "M";
+	
 	public String convertirNumero(int numero){
 		String numeroString = String.valueOf(numero);
 		String numeroConvertido = "";
 		String unidad = "";
 		String decena = "";
-		String centena = "";		
+		String centena = "";
+		if(numero >= 100){
+			if(numero < 200){
+				centena = "C";
+			}else if(numero < 300){
+				centena = "CC";
+			}else if(numero < 400){
+				centena = "CCC";
+			}else if(numero < 500){
+				centena = "CD";
+			}else if(numero < 600){
+				centena = "D";
+			}else if(numero < 700){
+				centena = "DC";
+			}else if(numero < 800){
+				centena = "DCC";
+			}else if(numero < 900){
+				centena = "DCCC";
+			}else if(numero < 1000){
+				centena = "CM";
+			}else if (numero == 1000){
+				return simboloMil;
+			}
+		}
 		switch(numeroString.substring(numeroString.length()-1)){
 			case "1": unidad = "I";
 					break;
@@ -51,33 +79,6 @@ public class Main {
 				case "0": decena = "";
 						break;
 			}
-		}
-		if (numeroString.length() > 2){
-			switch(numeroString.substring(numeroString.length()-3, numeroString.length()-2)){
-				case "1": centena = "C";
-						break;
-				case "2": centena = "CC";
-						break;
-				case "3": centena = "CCC";
-						break;
-				case "4": centena = "CD";
-						break;
-				case "5": centena = "D";
-						break;
-				case "6": centena = "DC";
-						break;
-				case "7": centena = "DCC";
-						break;
-				case "8": centena = "DCCC";
-						break;
-				case "9": centena = "CM";
-						break;
-				case "0": centena = "";
-						break;
-			}
-		}
-		if(numero == 1000){
-			return "M";
 		}
 		numeroConvertido = centena + decena + unidad;
 		return numeroConvertido;
