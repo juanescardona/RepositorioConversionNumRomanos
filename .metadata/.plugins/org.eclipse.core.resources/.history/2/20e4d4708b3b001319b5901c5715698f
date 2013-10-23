@@ -1,14 +1,11 @@
 public class Main {
 	
 	public String convertirNumero(int numero){
-		
-		String numeroString = String.valueOf(numero);	//Número a convertir representado en String
-		String numeroConvertido = "";					//variable que contiene la respuesta final(numero romano)
-		String unidad = "";								//Almacena la unidad del número	a convertir
-		String decena = "";								//Almacena la decena del número a convertir
-		String centena = "";							//Almacena la centena del número a convertir
-		
-		//En el siguiente switch case se toma la unidad del número para hacer la respectiva conversión de la unidad a romano
+		String numeroString = String.valueOf(numero);
+		String numeroConvertido = "";
+		String unidad = "";
+		String decena = "";
+		String centena = "";		
 		switch(numeroString.substring(numeroString.length()-1)){
 			case "1": unidad = "I";
 					break;
@@ -31,8 +28,6 @@ public class Main {
 			case "0": unidad = "";
 					break;
 		}
-		
-		//En el siguiente switch case se toma la decena del número para hacer la respectiva conversión de la decena a romano
 		if (numeroString.length() > 1){
 			switch(numeroString.substring(numeroString.length()-2, numeroString.length()-1)){
 				case "1": decena = "X";
@@ -57,8 +52,6 @@ public class Main {
 						break;
 			}
 		}
-		
-		//En el siguiente switch case se toma la centena del número para hacer la respectiva conversión de la centena a romano
 		if (numeroString.length() > 2){
 			switch(numeroString.substring(numeroString.length()-3, numeroString.length()-2)){
 				case "1": centena = "C";
@@ -86,8 +79,7 @@ public class Main {
 		if(numero == 1000){
 			return "M";
 		}
-		
-		numeroConvertido = centena + decena + unidad; //Se concatena las respectivas conversiones a romano para representar el número completo
+		numeroConvertido = centena + decena + unidad;
 		return numeroConvertido;
 	}
 }
